@@ -1,4 +1,4 @@
-This is code written for Sheila at Graphic Products to apply for a PHP position based on criteria given the PDF file.
+This is code written to apply for a PHP position based on criteria given the PDF file.
 
 The tech_library.sql file has all the information for the database. I included the data for the tbl_users table. I got this into the database via the insertUsers function which is commented out on line 34 of the index.php file. 
 

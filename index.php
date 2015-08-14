@@ -16,7 +16,6 @@ $login_msg = isset($_GET['login_msg']) ? $_GET['login_msg'] : 0;
 #order the books available
 $order_by = isset($_GET['order_by']) ? $_GET['order_by'] : "subject"; 
 
-
 if(isset($_POST['email'], $_POST['password'])) {
 	# can check email/password for junk
 	# do this with JS on the front end but, doesn't hurt to do it again
@@ -30,7 +29,6 @@ if(isset($_POST['email'], $_POST['password'])) {
 		$tech_library->changeLocation("index.php?login_msg=1");
 	}
 } else {
-	
 	#insert user
 	#$tech_library->insertUsers($library_db);
 	
@@ -42,9 +40,6 @@ if(isset($_POST['email'], $_POST['password'])) {
 	# much easier to just include an html file
 	include("login_form.html");
 }
-
-
 ?>
-
 </body>
 </html>

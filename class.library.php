@@ -7,11 +7,13 @@ include("variables.php");
 # get the database connection
 $library_db = new mysqli($SQL_DB_SERVER, $SQL_USERNAME, $SQL_PASSWORD, $SQL_DB_NAME);
 
+#if we got an error on the connection, fail out and exit
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
 
+# main class that holds all functions
 class techLibrary {
 	#### index page functions 
 	# show the status of all books
@@ -54,6 +56,7 @@ class techLibrary {
 			AND co.book_id = $_book_id 
 			ORDER BY b.title
 		";
+		
 		#echo "<p>$select_sql</p>";
 		if($select_book2->prepare($select_sql)) {
 			$select_book2->execute();
@@ -73,7 +76,6 @@ class techLibrary {
 		}
 	} # see if checked out
 
-		
 	# show the login form
 	function showLogin($_login_msg) {
 		echo "<h2>Login to check out books</h2>";
